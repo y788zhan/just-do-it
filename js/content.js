@@ -3,7 +3,22 @@ var avatars = [
   chrome.extension.getURL("../images/avatar2.jpg"),
   chrome.extension.getURL("../images/avatar3.jpg"),
   chrome.extension.getURL("../images/avatar4.jpg"),
-  chrome.extension.getURL("../images/avatar5.jpg")
+  chrome.extension.getURL("../images/avatar5.jpg"),
+  chrome.extension.getURL("../images/avatar6.jpg"),
+  chrome.extension.getURL("../images/avatar7.jpg"),
+  chrome.extension.getURL("../images/avatar8.jpg"),
+  chrome.extension.getURL("../images/avatar9.jpg"),
+  chrome.extension.getURL("../images/avatar10.jpg"),
+  chrome.extension.getURL("../images/avatar11.jpg"),
+  chrome.extension.getURL("../images/avatar12.jpg"),
+  chrome.extension.getURL("../images/avatar13.jpg"),
+  chrome.extension.getURL("../images/avatar14.jpg"),
+  chrome.extension.getURL("../images/avatar15.jpg"),
+  chrome.extension.getURL("../images/avatar16.jpg"),
+  chrome.extension.getURL("../images/avatar17.jpg"),
+  chrome.extension.getURL("../images/avatar18.jpg"),
+  chrome.extension.getURL("../images/avatar19.jpg"),
+  chrome.extension.getURL("../images/avatar20.jpg")
 ]
 
 function changeAvatar(elem, n) {
@@ -23,6 +38,12 @@ function changeText(elem, n) {
     elem.addClass("shia");
   }
 }
+
+/*
+function changeAnimated(elem) {
+  elem.replaceWith('<img src="')
+}
+*/
 
 $(document).ready(function(){
   text = new markov(corpus, "string", /[.^\w]+ /g);
