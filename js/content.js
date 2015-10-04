@@ -45,6 +45,8 @@ function changeAnimated(elem) {
 */
 
 function surprise() {
+  var audio = chrome.extension.getURL("../images/shia.mp3");
+  var shiaSound = new Audio(audio);
   $('#moving-shia')[0].style.display = 'inline';
   $('#moving-shia')[0].style.left = 0;
   $('#moving-shia')[0].style.top = 0;
@@ -53,13 +55,15 @@ function surprise() {
   var h = $(window).height();
   var w = $(window).width();
   var m = h / w;
+  shiaSound.play();
   function frame () {
     if (left > w) {
+      shiaSound.pause();
       //$('#moving-shia')[0].style.display = 'none';
       return;
     }
-    left += 2;
-    top += m * 2;
+    left += 1;
+    top += m * 1;
     $('#moving-shia')[0].style.left = left + 'px';
     $('#moving-shia')[0].style.top = top + 'px';
   }
