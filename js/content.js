@@ -18,6 +18,6 @@ $(document).ready(function(){
  });
 
   $('.tweet-text').each(function (){
-    $(this).html(text.gen(20));
+    $(this).html(text.gen(20).toUpperCase());
   });
 })
