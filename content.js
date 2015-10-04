@@ -10,7 +10,7 @@ function changeAvatar(elem, n) {
 	elem.attr("src", avatars[n]);
 }
 
-$(document).ready(function() {
+$(window).load(function() {
   $("img").each(function () {
     var n = Math.floor(Math.random() * 5);
     changeAvatar($(this), n);
