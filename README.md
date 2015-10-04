@@ -1,4 +1,3 @@
-# just-do-it
-Just do it
+# Just Do It
 
 Shia Labeouf-ify your Twitter feed.
