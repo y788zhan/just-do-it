@@ -44,6 +44,28 @@ function changeAnimated(elem) {
 }
 */
 
+function surprise() {
+  $('#moving-shia')[0].style.display = 'inline';
+  $('#moving-shia')[0].style.left = 0;
+  $('#moving-shia')[0].style.top = 0;
+  var left = 0;
+  var top = 0;
+  var h = $(window).height();
+  var w = $(window).width();
+  var m = h / w;
+  function frame () {
+    if (left > w) {
+      //$('#moving-shia')[0].style.display = 'none';
+      return;
+    }
+    left += 2;
+    top += m * 2;
+    $('#moving-shia')[0].style.left = left + 'px';
+    $('#moving-shia')[0].style.top = top + 'px';
+  }
+  var id = setInterval(frame, 1);
+}
+
 $(document).ready(function(){
   text = new markov(corpus, "string", /[.^\w]+ /g);
   alert("r u ready?");
@@ -86,4 +108,17 @@ $(document).ready(function(){
       changeText($(this), m);
     });
   });
+  // add shia gif element
+  $('body').append("<div id='helloShia'><img class='shia' id='moving-shia' /></div>")
+  $('#helloShia img').attr("src", chrome.extension.getURL("../images/hello.gif"));
+  $('#helloShia img').css({
+    'position' : 'fixed',
+    'width' : '300px',
+    'height' : '300px',
+    'top' : '0',
+    'left' : '0'
+  });
+  surprise();
+  var lol = setInterval(surprise, 120000);
 })
+
