@@ -5,7 +5,6 @@ var avatars = [
   chrome.extension.getURL("../images/avatar4.jpg"),
   chrome.extension.getURL("../images/avatar5.jpg")
 ]
-
 function changeAvatar(elem, n) {
   if (elem.hasClass("shia")) {
     return;
@@ -35,6 +34,12 @@ $(document).ready(function(){
     var n = Math.floor(Math.random() * (avatars.length - 1));
     changeAvatar($(this), n);
   });
+  $("video").each(function() {
+    $(this).replaceWith(' <img class="shia-gif" /> ');
+    $('.shia-gif').each(function(){
+      $(this).attr("src", chrome.extension.getURL("../images/clap.gif"));
+    });
+  });
   $('.tweet-text').each(function () {
     var m = Math.floor(Math.random() * 28) + 3;
     changeText($(this), m);
@@ -44,6 +49,12 @@ $(document).ready(function(){
   $(window).scroll(function () {
     $('.fullname').each(function () {
       $(this).html("Shia Labeouf");
+    });
+    $("video").each(function() {
+      $(this).replaceWith(' <img class="shia-gif shia" /> ');
+      $('.shia-gif').each(function(){
+        $(this).attr("src", chrome.extension.getURL("../images/clap.gif"));
+      });
     });
     $("img").each(function () {
       var n = Math.floor(Math.random() * (avatars.length - 1));
