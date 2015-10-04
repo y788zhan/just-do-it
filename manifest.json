@@ -8,7 +8,7 @@
       "matches": [
         "<all_urls>"
       ],
-      "js": ["jquery-2.1.4.min.js", "content.js"]
+      "js": ["js/jquery-2.1.4.min.js", "js/markov.js", "js/corpus.js", "js/json2.js",  "js/content.js"]
     }
   ],
 
